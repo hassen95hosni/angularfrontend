@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+  <title>VistaPrint Monitoring system Details</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<script src="chart.js"></script>
+  <!--<link rel="stylesheet" href="assets/css/css2/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/css2/noscript.css" /></noscript>
+-->
+
+
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+</head>
+<body class="is-preload">
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+  <!-- Header -->
+  <header id="header" class="alt">
+    <span class="logo"><img src="images/logo.png" alt="" /></span>
+    <h1>Monitoring </h1>
+  </header>
+
+
+
+  <!-- Main -->
+  <div id="main">
+
+    <!-- Introduction -->
+
+    <!-- First Section -->
+
+    <div class="inner">
+
+      <section id="first" class="main special">
+        <header class="major">
+          <h2>GERMANY</h2>
+        </header>
+          <div style="float: left; width: 50%;">blah blah on the right<canvas id="myChart" width="400" height="400"></canvas>
+            <script>
+              var ctx = document.getElementById("myChart").getContext('2d');
+              var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                  datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                      'rgba(255,99,132,1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                  }]
+                },
+                options: {
+                  scales: {
+                    yAxes: [{
+                      ticks: {
+                        beginAtZero:true
+                      }
+                    }]
+                  }
+                }
+              });
+            </script><div *ngIf="chart"> <canvas id="canvas" >{{chart}}</canvas></div></div>
+          <div style="float: right; width: 50%;"><p> blah blah on the left </p>
+            <table>
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Item One</td>
+                <td>Ante turpis integer aliquet porttitor.</td>
+                <td>29.99</td>
+              </tr>
+              <tr>
+                <td>Item Two</td>
+                <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                <td>19.99</td>
+              </tr>
+              <tr>
+                <td>Item Three</td>
+                <td> Morbi faucibus arcu accumsan lorem.</td>
+                <td>29.99</td>
+              </tr>
+              <tr>
+                <td>Item Four</td>
+                <td>Vitae integer tempus condimentum.</td>
+                <td>19.99</td>
+              </tr>
+              <tr>
+                <td>Item Five</td>
+                <td>Ante turpis integer aliquet porttitor.</td>
+                <td>29.99</td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td colspan="2"></td>
+                <td>100.00</td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+
+
+
+
+        <footer class="major">
+          <ul class="actions special">
+            <li><a href="generic.html" class="button">see More</a></li>
+          </ul>
+        </footer>
+
+      </section>
+
+      <!-- Second Section -->
+    </div></div>
+  <!-- Get Started -->
+
+
+
+  <!-- Footer -->
+  <footer id="footer">
+
+  </footer>
+</div>
+
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+
+<script src="assets/js/js2/jquery.min.js"></script>
+<script src="assets/js/js2/browser.min.js"></script>
+<script src="assets/js/js2/breakpoints.min.js"></script>
+<script src="assets/js/js2/util.js"></script>
+<script src="assets/js/js2/main.js"></script>
+<!--<script src=https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js">
+  angular.module("app", ["chart.js"]).controller("MixedChartCtrl",
+    function ($scope) {
+      $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+
+      $scope.labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+      $scope.data = [
+        [65, -59, 80, 81, -56, 55, -40],
+        [28, 48, -40, 19, 86, 27, 90]
+      ];
+      $scope.datasetOverride = [
+        {
+          label: "Bar chart",
+          borderWidth: 1,
+          type: 'bar'
+        },
+        {
+          label: "Line chart",
+          borderWidth: 3,
+          hoverBackgroundColor: "rgba(255,99,132,0.4)",
+          hoverBorderColor: "rgba(255,99,132,1)",
+          type: 'line'
+        }
+      ];
+    });
+
+
+  var ctx = document.getElementById("myChart").getContext('2d');
+
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255,99,132,1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      }
+    }
+  });
+</script>-->
+<script src="../node_modules/chart.js/src/chart.js"></script>
+<script src="../node_modules/ng2-charts/ng2-charts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+
+
+</body>
+</html>
