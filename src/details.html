@@ -133,7 +133,28 @@
 
         <footer class="major">
           <ul class="actions special">
-            <li><a href="generic.html" class="button">see More</a></li>
+            <form action="">
+              <li></li><font size="20">
+            <input  id="blah"   type="number">.
+            <input type="number"  min="0" max="255">.
+            <input type="number"   max="255" min="0">.
+            <input type="number"  max="255" min="0"><br>
+          </font></li>
+             <li>
+            <div class="col-4 col-12-small">
+                <input type="radio" name="type" type="radio" value="ping">
+                <label for="demo-priority-low">ping</label>
+              </div>
+              <div class="col-4 col-12-small">
+                  &nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="type" value="tracert" >
+                  <label for="demo-priority-low">tracert</label>
+                </div>
+              </li>
+          </form>
+          
+
+            <li><a href="" class="button">Add instruction</a></li>
           </ul>
         </footer>
 
@@ -153,6 +174,9 @@
 
 
 <!-- Scripts -->
+<script>
+var id = document.getElementById("blah").setAttribute("max","4");
+</script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -168,72 +192,6 @@
 <script src="assets/js/js2/breakpoints.min.js"></script>
 <script src="assets/js/js2/util.js"></script>
 <script src="assets/js/js2/main.js"></script>
-<!--<script src=https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js">
-  angular.module("app", ["chart.js"]).controller("MixedChartCtrl",
-    function ($scope) {
-      $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
-
-      $scope.labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-      $scope.data = [
-        [65, -59, 80, 81, -56, 55, -40],
-        [28, 48, -40, 19, 86, 27, 90]
-      ];
-      $scope.datasetOverride = [
-        {
-          label: "Bar chart",
-          borderWidth: 1,
-          type: 'bar'
-        },
-        {
-          label: "Line chart",
-          borderWidth: 3,
-          hoverBackgroundColor: "rgba(255,99,132,0.4)",
-          hoverBorderColor: "rgba(255,99,132,1)",
-          type: 'line'
-        }
-      ];
-    });
-
-
-  var ctx = document.getElementById("myChart").getContext('2d');
-
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero:true
-          }
-        }]
-      }
-    }
-  });
-</script>-->
 <script src="../node_modules/chart.js/src/chart.js"></script>
 <script src="../node_modules/ng2-charts/ng2-charts.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>

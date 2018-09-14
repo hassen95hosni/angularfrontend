@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-/*
-import { WeatherService } from './weather.service';
-*/import { ChartsModule } from 'ng2-charts';
+import { ChartsModule } from 'ng2-charts';
 import { AppComponent } from './app.component';
 import { BarChartDemoComponent } from './app-bar-chart-demo/app-bar-chart-demo.component';
 import { AllUserComponent } from './all-user/all-user.component';
@@ -28,9 +26,6 @@ import { GetUserByNameComponent } from './get-user-by-name/get-user-by-name.comp
     ChartsModule
   ],
   providers: [
-/*
-    WeatherService
-*/
   ],
   bootstrap: [AppComponent]
 
