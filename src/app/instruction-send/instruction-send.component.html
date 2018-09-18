@@ -1,19 +1,20 @@
 
 <form action="">
 <font size="20">
-<input type="number" max="255" min="0">.
-<input type="number" max="255" min="0">.
-<input type="number" max="255" min="0">.
-<input type="number" max="255" min="0">.
+    <h1>{{firstNumber}}  {{secondNumber}} {{thirdNumber}}  {{forthNumber}} {{typeValue}}</h1>
+<input ng-model="firstNumber" type="number" max="255" min="0">.
+<input ng-model="secondNumber" type="number" max="255" min="0">.
+<input ng-model="thirdNumber" type="number" max="255" min="0">.
+<input ng-model="forthNumber" type="number" max="255" min="0">.
 </font>
 <div class="col-4 col-12-small">
-  <input type="radio" name="type" type="radio" value="ping">
+  <input ng-model="typeValue" type="radio" name="type" type="radio" value="ping" checked>
   <label for="demo-priority-low">ping</label>
 </div>
 <div class="col-4 col-12-small">
     &nbsp;&nbsp;&nbsp;
-    <input type="radio" name="type" value="tracert" >
+    <input ng-model="typeValue" type="radio" name="type" value="tracert" >
     <label for="demo-priority-low">tracert</label>
   </div>
-  <a href="" class="button">Add instruction</a>
+  <a ng-click="createInstruction()" class="button">Add instruction</a>
 </form>

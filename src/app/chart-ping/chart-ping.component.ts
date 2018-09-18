@@ -3,17 +3,22 @@ import { ApiService } from  '../api.service';
 @Component({
   selector: 'app-chart-ping',
   templateUrl: './chart-ping.component.html',
-  styleUrls: ['./chart-ping.component.css']
+  styleUrls: ['./chart-ping.component.css','assets/css/main.css' 
+  ,'assets/css/noscript.css']
 })
 export class ChartPingComponent implements OnInit {
   private  ping:  Array<object> = [];
   constructor(private apiService : ApiService) { }
 
   ngOnInit() {
-    this.getAllpingchart();
+    
   }
   public  getAllpingchart(){
-    this.apiService.getAllpingchart().subscribe((data:  Array<object>) => {
+    var  user  = {
+      name:  "gnar",
+      mac:"526"
+  };
+    this.apiService.getAllpingchart(user).subscribe((data:  Array<object>) => {
         this.ping  =  data;
         console.log(data);
         

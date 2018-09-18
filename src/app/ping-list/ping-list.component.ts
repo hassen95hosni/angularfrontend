@@ -3,7 +3,8 @@ import { ApiService } from  '../api.service';
 @Component({
   selector: 'app-ping-list',
   templateUrl: './ping-list.component.html',
-  styleUrls: ['./ping-list.component.css']
+  styleUrls: ['./ping-list.component.css','assets/css/main.css' 
+  ,'assets/css/noscript.css']
 })
 export class PingListComponent implements OnInit {
   private  ping:  Array<object> = [];
