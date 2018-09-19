@@ -14,6 +14,7 @@ export class InstructionSendComponent implements OnInit {
     public thirdNumber : string;
     public forthNumber : string;
     public typeValue : string;
+
   constructor(private apiservice : ApiService) { }
 
   ngOnInit() {
@@ -26,8 +27,9 @@ export class InstructionSendComponent implements OnInit {
         add:  "20.0.0.1",
     }
     ;
+    var a = new Instruction("","",this.firstNumber+"."+this.secondNumber+"."+this.thirdNumber+"."+this.forthNumber);
     this.apiservice.createInstruction(instruction).subscribe((response) => {
-       var a = new Instruction("0","0","0");
+       
         console.log(response);
     });
     };

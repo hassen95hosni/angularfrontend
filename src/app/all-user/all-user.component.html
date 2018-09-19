@@ -6,8 +6,8 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
-  <!-- Wrapper -->
-    <div id="wrapper">
+  <!-- Wrapper -->  
+  <div id="wrapper">
 
       <!-- Header -->
 
@@ -21,7 +21,7 @@
               
               <article *ngFor="let user of users"  class="style1" onclick="reloadpage()">
                 <span class="image">
-                  <img src="/untitled1/src/images/img/pic01.jpg" alt="" />
+                  <img src="../../assets/images/pic01.jpg" alt="" />
                 </span>
                 <a  onclick="reloadpage()">
                   <h2>{{user.name}}</h2>
@@ -42,7 +42,9 @@
       
       <!-- Footer -->
         <footer id="footer">
-                </footer>
+        
+          
+        </footer>
 
     </div>
 
@@ -52,6 +54,21 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="../assets.1/js/jquery.min.js"></script>
+<script src="../../assets.1/js/jquery.scrollex.min.js"></script>
+<script src="../../assets.1/js/jquery.scrolly.min.js"></script>
+<script src="../../assets.1/js/browser.min.js"></script>
+<script src="../../assets.1/js/breakpoints.min.js"></script>
+<script src="../../assets.1/js/util.js"></script>
+<script src="../../assets.1/js/main.js"></script>
+
+
+
+<script src="../../assets.1/js/js2/jquery.min.js"></script>
+<script src="../../assets.1/js/js2/browser.min.js"></script>
+<script src="../../assets.1/js/js2/breakpoints.min.js"></script>
+<script src="../../assets.1/js/js2/util.js"></script>
+<script src="../../assets.1/js/js2/main.js"></script>
 <script>
 function reloadpage(){
   parent.location.replace("../../src/details.html");

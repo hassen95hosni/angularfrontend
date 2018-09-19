@@ -5,19 +5,13 @@ import {User} from 'src/app/all-user/user'
   selector: 'app-all-user',
   templateUrl: './all-user.component.html',
   styleUrls: [
-    //'./assetss/js/jquery.min.js',
-  //'./assetss/js/jquery.scrollex.min.js',
-  //'./assetss/js/jquery.scrolly.min.js',
-  //'./assetss/js/browser.min.js',
-  //'./assetss/js/breakpoints.min.js',
-  //'./assetss/js/util.js',
-  //'./assetss/js/main.js',
   
-  './all-user.component.css',
+  //'./all-user.component.css',
   './assets/css/main.css',
   './assets/css/font-awesome.min.css',
   './assets/css/noscript.css',
-  './assetss/css/main.css'
+  './assetss/css/main.css',
+  //'../../assets.1/css/main.css','../../assets.1/css/noscript.css'
 ]
 })
 export class AllUserComponent implements OnInit {

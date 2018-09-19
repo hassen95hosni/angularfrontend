@@ -9,6 +9,7 @@ import { ChartPingComponent } from './chart-ping/chart-ping.component';
 import { PingListComponent } from './ping-list/ping-list.component';
 import { InstructionSendComponent } from './instruction-send/instruction-send.component';
 import { GetUserByNameComponent } from './get-user-by-name/get-user-by-name.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { GetUserByNameComponent } from './get-user-by-name/get-user-by-name.comp
   imports: [
     BrowserModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    AppRoutingModule
   ],
   providers: [
   ],

@@ -53,6 +53,7 @@ table {
 
 body {
 	-webkit-text-size-adjust: none;
+	
 }
 
 mark {
@@ -3137,6 +3138,7 @@ input, select, textarea {
 
 			#main {
 				padding: 0em 0 4em 0 ;
+				height: 600px;
 			}
 
 		}
