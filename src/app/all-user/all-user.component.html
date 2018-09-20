@@ -16,21 +16,21 @@
       <!-- Main -->
       
         <div id="main">
-          <div class="inner">
+          <div class="inner" >
             <section class="tiles" >
-              
-              <article *ngFor="let user of users"  class="style1" onclick="reloadpage()">
+           
+              <article *ngFor="let user of users"  class="style1" onclick="parent.location.replace('../../src/details.html');">
                 <span class="image">
                   <img src="../../assets/images/pic01.jpg" alt="" />
                 </span>
-                <a  onclick="reloadpage()">
+                <a  onclick="parent.location.replace('../../src/details.html');">
                   <h2>{{user.name}}</h2>
                   <div class="content">
                     <p>{{user.id}}</p>
                   </div>
                 </a>
               </article>
-                          
+            
              
               
               
@@ -47,6 +47,13 @@
         </footer>
 
     </div>
+    
+<script>
+    function details(){
+     // parent.location.replace("../../src/details.html");
+    location.href='../../src/details.html';
+    
+    }</script>
 
   <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -75,5 +82,6 @@ function reloadpage(){
 
 
 }
+
 </script>
 </body>

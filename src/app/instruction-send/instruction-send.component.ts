@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
   ,'assets/css/noscript.css']
 })
 export class InstructionSendComponent implements OnInit {
-    public firstNumber : string;
-    public secondNumber : string;
+    public firstNumber ;
+    public secondNumber ;
     public thirdNumber : string;
     public forthNumber : string;
     public typeValue : string;
@@ -20,15 +20,16 @@ export class InstructionSendComponent implements OnInit {
   ngOnInit() {
       console.log("add:"+this.firstNumber+"."+this.secondNumber+"."+this.thirdNumber+"."+this.forthNumber+"type"+this.typeValue);
   }
-  createInstruction(instruction:Instruction){
-
+  public createInStruction(z,y,w,x){
+console.log(this.firstNumber);
     var  insstruction  = {
         sender:  "gnar",
         add:  "20.0.0.1",
     }
     ;
     var a = new Instruction("","",this.firstNumber+"."+this.secondNumber+"."+this.thirdNumber+"."+this.forthNumber);
-    this.apiservice.createInstruction(instruction).subscribe((response) => {
+    console.log(a);
+    this.apiservice.createInstruction(a).subscribe((response) => {
        
         console.log(response);
     });

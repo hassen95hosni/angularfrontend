@@ -10,11 +10,14 @@ export class ApiService {
   us : Observable<User[]>;
   API_URL  =  'http://localhost:1330';
   constructor(private  httpClient:  HttpClient) { }
-  getAllping(){
-    return  this.httpClient.get(`${this.API_URL}/pingAll`);
+  getAllping():Observable<string[]>{
+    return  this.httpClient.get<string[]>(`${this.API_URL}/pingAll`);
 }
 createInstruction(instruction:Instruction):Observable<Instruction>{
-  return this.httpClient.post<Instruction>(`${this.API_URL}/addinstruction/`,instruction);
+  console.log(instruction);
+  var a = JSON.stringify(instruction);
+  var b = JSON.parse(a);
+  return this.httpClient.post<Instruction>(`${this.API_URL}/addinstruction/`,b);
 }
 getAllpingchart(sender){
   return this.httpClient.post(`${this.API_URL}/getpingbysender/`,sender);

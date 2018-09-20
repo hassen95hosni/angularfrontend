@@ -18,10 +18,10 @@
 
 </head>
 <body class="is-preload">
-    <app-get-user-by-name></app-get-user-by-name>
+    
 <!-- Wrapper -->
 <div id="wrapper">
-
+    <app-get-user-by-name></app-get-user-by-name>
   <!-- Header -->
   <header id="header" class="alt">
     <span class="logo"><img src="images/logo.png" alt="" /></span>
@@ -43,6 +43,7 @@
         <header class="major">
           <h2>GERMANY</h2>
         </header>
+        
           <div style="float: left; width: 50%;">blah blah on the right<canvas id="myChart" width="400" height="400"></canvas>
             <script>
               var ctx = document.getElementById("myChart").getContext('2d');
@@ -83,6 +84,7 @@
                 }
               });
             </script><div *ngIf="chart"> <canvas id="canvas" >{{chart}}</canvas></div></div>
+          <app-get-user-by-name></app-get-user-by-name>
           <div style="float: right; width: 50%;"><p> blah blah on the left </p>
             <table>
               <thead>

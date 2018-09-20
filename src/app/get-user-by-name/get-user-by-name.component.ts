@@ -5,8 +5,10 @@ import {User} from 'src/app/all-user/user'
 @Component({
   selector: 'app-get-user-by-name',
   templateUrl: './get-user-by-name.component.html',
-  styleUrls: ['./get-user-by-name.component.css','assets/css/main.css' 
-  ,'assets/css/noscript.css']
+  styleUrls: ['./get-user-by-name.component.css'
+              ,'assets/css/main.css' 
+              ,'assets/css/noscript.css'
+]
 })
 export class GetUserByNameComponent implements OnInit {
 private user : User;
