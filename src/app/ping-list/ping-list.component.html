@@ -1,3 +1,6 @@
+ <ul>
+  <li *ngFor="let message of pingss">{{message.date}}</li>
+</ul>
  <table>
     <thead>
     <tr>
@@ -7,15 +10,20 @@
     </tr>
     </thead>
     <tbody>
+    <tr *ngFor="let message of pingss">
+      <td>{{message.date}}</td>
+      <td>{{message.average}}</td>
+      <td>{{message.loss}}</td>
+    </tr>
     <tr *ngFor="let ping of pings">
       <td>{{ping.date}}</td>
       <td>{{ping.average}}</td>
       <td>{{ping.loss}}</td>
     </tr>
-    
-    
-    
-   
+
+
+
+
     </tbody>
     <tfoot>
     <tr>
@@ -24,3 +32,4 @@
     </tr>
     </tfoot>
   </table>
+
