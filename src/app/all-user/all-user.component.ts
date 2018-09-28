@@ -72,7 +72,7 @@ public getallUsers ( ){
    // console.log(this.users[i]);
   });  
  
-console.log(this.users);   
+console.log("all users "+this.users);   
 //this.users.forEach(element => {
   //console.log(element);
  // console.log(element.ipaddresse);

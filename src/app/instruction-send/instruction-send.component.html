@@ -1,20 +1,21 @@
 
 <form action="">
 <font size="20">
-    <h1>{{firstNumber}}  {{secondNumber}} {{thirdNumber}}  {{forthNumber}} {{typeValue}}</h1>
+    <h3>{{firstNumber}} . {{secondNumber}}. {{thirdNumber}} . {{forthNumber}} . {{typeValue}}</h3>
 <input [(ngModel)]="firstNumber" type="number" max="255" min="0" name="fn">.
 <input [(ngModel)]="secondNumber" type="number" max="255" min="0" name="sn">.
 <input [(ngModel)]="thirdNumber" type="number" max="255" min="0" name="tn">.
 <input [(ngModel)]="forthNumber" type="number" max="255" min="0" name="fn">.
 </font>
 <div class="col-4 col-12-small">
-  <input ng-model="typeValue" type="radio" name="type" type="radio" value="ping" checked>
+  <input [(ngModel)]="typeValue" type="radio" name="type"  value="ping" checked>
   <label for="demo-priority-low">ping</label>
 </div>
 <div class="col-4 col-12-small">
     &nbsp;&nbsp;&nbsp;
-    <input ng-model="typeValue" type="radio" name="type" value="tracert" >
+    <input [(ngModel)]="typeValue" type="radio" name="type" value="tracert" >
     <label for="demo-priority-low">tracert</label>
   </div>
   <a (click)="createInStruction(fn,sn,tn,fn)" class="button">Add instruction</a>
+  {{result}}
 </form>

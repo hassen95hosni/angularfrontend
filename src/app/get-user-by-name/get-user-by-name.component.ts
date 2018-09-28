@@ -16,6 +16,7 @@ private user : User;
   constructor(private apiService : ApiService) { }
 
   ngOnInit() {
+    //this.getuserByName();
   }
 public getuserByName(name){
 this.apiService.getUserbyName(name).subscribe(data=>{var j = JSON.stringify(data);
