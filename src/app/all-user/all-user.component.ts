@@ -24,7 +24,8 @@ private test :Array<string> = [];
 
   }
 public getallUsers ( ){
-  this.apiService.getallUsers().subscribe(data=> {//console.log("data"+data);
+  this.apiService.getallUsers().subscribe(data=> {console.log("data"+data);
+ 
   this.test =data;
   var i = 0;
   this.test.forEach(element => {//console.log(element);
@@ -32,7 +33,7 @@ public getallUsers ( ){
     
     var j = JSON.stringify(element);
     //console.log(j);
-    var a=new User("0","0","0","0");
+    var a=new User("0","0","0","0","0","0","0");
     try{
     var x = j.indexOf("id=");
     
@@ -66,7 +67,20 @@ public getallUsers ( ){
    } catch (error) {
      
    }
-    
+   try {
+    x=j.indexOf("average=")
+    y=j.indexOf("}",x);
+    a.average=j.substring(x+11,y);  
+     
+   } catch (error) {
+     a.average="0"
+   }
+    if(a.average=="0"){
+      a.image=true;
+    }
+    else {
+      a.image=false;
+    }
     this.users[i]=a;
     i=i+1;
    // console.log(this.users[i]);

@@ -6,20 +6,25 @@ import {ChartPingComponent} from 'src/app/chart-ping/chart-ping.component'
 import {PingListComponent} from 'src/app/ping-list/ping-list.component'
 import{GetUserByNameComponent} from 'src/app/get-user-by-name/get-user-by-name.component'
 import{InstructionSendComponent} from 'src/app/instruction-send/instruction-send.component'
+import{ChartsAndpingComponent} from 'src/app/charts-andping/charts-andping.component'
 import {AppComponent} from 'src/app/app.component'
+import {InitialAdresseComponent} from './initial-adresse/initial-adresse.component'
 const routes: Routes = [
-  { path: 'allusers', component: AllUserComponent },
- {path:'chartping/:name',component:ChartPingComponent},
-  {path:'pinglist/:name',component:PingListComponent},
+  { path: '', component: AllUserComponent },
   {path:'user/:name',component:GetUserByNameComponent},
- {path:'sendinstruction/:name',component:InstructionSendComponent}
+  {path:'chartping/:name',component:ChartPingComponent},
+  {path:'pinglist/:name',component:PingListComponent},
+ {path:'user/sendinstruction/:name',component:InstructionSendComponent},
+ {path:'user/charts/:name',component:ChartsAndpingComponent}
+ ,
+ {path:'user/change/:name',component:InitialAdresseComponent}
  //,{path:'/root',component:AppComponent}
 ];
 
 @NgModule({
   imports: [
     
-   // RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes)
   ],
  
   exports: [ RouterModule ]

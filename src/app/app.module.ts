@@ -11,6 +11,10 @@ import { InstructionSendComponent } from './instruction-send/instruction-send.co
 import { GetUserByNameComponent } from './get-user-by-name/get-user-by-name.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import {APP_BASE_HREF} from '@angular/common';
+import { NavigationComponent } from './navigation/navigation.component';
+import { ChartsAndpingComponent } from './charts-andping/charts-andping.component';
+import { InitialAdresseComponent } from './initial-adresse/initial-adresse.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { FormsModule } from '@angular/forms';
     ChartPingComponent,
     PingListComponent,
     InstructionSendComponent,
-    GetUserByNameComponent
+    GetUserByNameComponent,
+    NavigationComponent,
+    ChartsAndpingComponent,
+    InitialAdresseComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule
     ,FormsModule
   ],
-  providers: [
+  providers: [{provide: APP_BASE_HREF, useValue : '/' }
   ],
   bootstrap: [AppComponent,GetUserByNameComponent]
 

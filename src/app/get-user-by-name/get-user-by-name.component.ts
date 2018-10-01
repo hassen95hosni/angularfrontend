@@ -20,7 +20,7 @@ private user : User;
   }
 public getuserByName(name){
 this.apiService.getUserbyName(name).subscribe(data=>{var j = JSON.stringify(data);
-var a = new User("0","0","0","0");
+var a = new User("0","0","0","0","0","0","0");
 try{
   var x = j.indexOf("id=");
   

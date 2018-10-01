@@ -1,0 +1,23 @@
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<app-navigation></app-navigation>
+<form action="">
+<font size="20">
+    <h3>{{firstNumber}} . {{secondNumber}}. {{thirdNumber}} . {{forthNumber}} <br> {{typeValue}}</h3>
+<input [(ngModel)]="firstNumber" type="number" max="255" min="0" name="fn">.
+<input [(ngModel)]="secondNumber" type="number" max="255" min="0" name="sn">.
+<input [(ngModel)]="thirdNumber" type="number" max="255" min="0" name="tn">.
+<input [(ngModel)]="forthNumber" type="number" max="255" min="0" name="fn">.
+</font>
+  <a (click)="createInStruction(fn,sn,tn,fn)" class="button">change addresee</a>
+  {{result}}
+</form>

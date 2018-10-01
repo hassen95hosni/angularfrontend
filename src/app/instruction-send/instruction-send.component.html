@@ -1,21 +1,71 @@
 
+
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<app-navigation></app-navigation>
 <form action="">
 <font size="20">
-    <h3>{{firstNumber}} . {{secondNumber}}. {{thirdNumber}} . {{forthNumber}} . {{typeValue}}</h3>
+    <h3>{{firstNumber}} . {{secondNumber}}. {{thirdNumber}} . {{forthNumber}} <br> {{typeValue}}</h3>
 <input [(ngModel)]="firstNumber" type="number" max="255" min="0" name="fn">.
 <input [(ngModel)]="secondNumber" type="number" max="255" min="0" name="sn">.
 <input [(ngModel)]="thirdNumber" type="number" max="255" min="0" name="tn">.
 <input [(ngModel)]="forthNumber" type="number" max="255" min="0" name="fn">.
 </font>
+<!--
 <div class="col-4 col-12-small">
-  <input [(ngModel)]="typeValue" type="radio" name="type"  value="ping" checked>
+  <input  type="radio" name="type"  value="ping" [(ngModel)]="typeValue" >
   <label for="demo-priority-low">ping</label>
 </div>
 <div class="col-4 col-12-small">
     &nbsp;&nbsp;&nbsp;
-    <input [(ngModel)]="typeValue" type="radio" name="type" value="tracert" >
+    <input  type="radio" name="type" value="tracert" [(ngModel)]="typeValue">
     <label for="demo-priority-low">tracert</label>
   </div>
+-->
+
+  <div class="normal-container">
+      <div class="smile-rating-container">
+        <div class="smile-rating-toggle-container">
+          <form class="submit-rating">
+              <h2>Ping</h2>
+            <input id="meh" value="ping" name="satisfaction" type="radio" [(ngModel)]="typeValue"/> 
+            <input value="tracert" id="fun" name="satisfaction" type="radio" [(ngModel)]="typeValue" /> 
+            <label for="meh" class="rating-label rating-label-meh"></label>
+            <div class="smile-rating-toggle"></div>
+            
+            <div class="rating-eye rating-eye-left"></div>
+            <div class="rating-eye rating-eye-right"></div>
+            
+            <div class="mouth rating-eye-bad-mouth"></div>
+            <br>
+            <div class="toggle-rating-pill"></div>
+            <label for="fun" class="rating-label rating-label-fun">Tracert</label>
+          </form>
+        </div>
+      </div>
+    </div>
+ 
+   
+    
+   <!--
+     
+       <input  value="pin" type="radio" name="optradio" checked [(ngModel)]="typeValue" ><label> 1</label>
+     
+     
+        <input value="pi" type="checkbox" [(ngModel)]="typeValue"  name="optradio"><label> 2</label>
+     
+      
+        <input [(ngModel)]="typeValue" value="p" type="checkbox" name="optradio" ><label>Option 3</label>
+      
+   -->
+  
   <a (click)="createInStruction(fn,sn,tn,fn)" class="button">Add instruction</a>
   {{result}}
 </form>

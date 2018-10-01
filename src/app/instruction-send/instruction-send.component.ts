@@ -8,11 +8,12 @@ import { StompState } from "@stomp/ng2-stompjs";
 
 
 const WEBSOCKET_URL = "ws://localhost:1330/socket";
-const EXAMPLE_URL = "/topic/server-broadcaster";
+const EXAMPLE_URL = "/topic/server-broadcasters";
 @Component({
   selector: 'app-instruction-send',
   templateUrl: './instruction-send.component.html',
-  styleUrls: ['./instruction-send.component.css','assets/css/main.css' 
+  styleUrls: ['./instruction-send.component.css'
+  ,'assets/css/main.css' 
   ,'assets/css/noscript.css']
 })
 export class InstructionSendComponent implements OnInit {
@@ -84,7 +85,8 @@ console.log(this.firstNumber);
     ;
     this.result="nothing";
     var a = new Instruction("","",this.firstNumber+"."+this.secondNumber+"."+this.thirdNumber+"."+this.forthNumber,this.typeValue,this.result);
-   a.type="tracert";
+   console.log(this.typeValue);
+    a.type="tracert";
     console.log(a);
    
     this.apiservice.createInstruction(a).subscribe((response) => {

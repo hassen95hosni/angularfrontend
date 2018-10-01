@@ -28,5 +28,8 @@ getallUsers():Observable<string[]>{
 getUserbyName(name):Observable<string>{
   return this.httpClient.post<string>(`${this.API_URL}/userbyname`,name);
 }
+updateuser(name):Observable<string>{
+  return this.httpClient.post<string>(`${this.API_URL}/updateUser`,name);
+}
 }
   
