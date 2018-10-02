@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from  '../api.service';
 import {User} from 'src/app/all-user/user'
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-get-user-by-name',
@@ -13,11 +14,16 @@ import {User} from 'src/app/all-user/user'
 export class GetUserByNameComponent implements OnInit {
 private user : User;
 
-  constructor(private apiService : ApiService) { }
+  constructor(private apiService : ApiService,private active : ActivatedRoute) { }
 
   ngOnInit() {
+    this.active.paramMap
+      .subscribe(params => {
+            console.log("params"+params);
+      });
     //this.getuserByName();
   }
+  /*
 public getuserByName(name){
 this.apiService.getUserbyName(name).subscribe(data=>{var j = JSON.stringify(data);
 var a = new User("0","0","0","0","0","0","0");
@@ -58,4 +64,5 @@ this.user=a;
 });
 console.log(this.user);
 }
+*/
 }

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { MessagingService } from "../services/messaging.service";
 import { Message } from "@stomp/stompjs";
 import { StompState } from "@stomp/ng2-stompjs";
+import {ActivatedRoute}  from '@angular/router'
 
 
 const WEBSOCKET_URL = "ws://localhost:1330/socket";
@@ -30,7 +31,7 @@ export class InstructionSendComponent implements OnInit {
     public typeValue : string;
     public result:string;
 
-  constructor(private apiservice : ApiService) {
+  constructor(private active :ActivatedRoute ,private apiservice : ApiService) {
 
  // Instantiate a messagingService
  this.messagingService = new MessagingService(WEBSOCKET_URL, EXAMPLE_URL);
@@ -88,7 +89,9 @@ console.log(this.firstNumber);
    console.log(this.typeValue);
     a.type="tracert";
     console.log(a);
-   
+   this.active.paramMap.subscribe(params =>{
+    a.sender=params.get('name').substr(1);
+   })
     this.apiservice.createInstruction(a).subscribe((response) => {
        
         console.log(response);

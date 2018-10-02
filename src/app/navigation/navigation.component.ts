@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { Route } from '@angular/router/src/config';
 
 @Component({
@@ -10,15 +10,19 @@ import { Route } from '@angular/router/src/config';
 export class NavigationComponent implements OnInit {
 public href = "";
 public rst = false ;
-
-  constructor(private router : Router) {
+public name ;
+  constructor(private router : Router,private activated :ActivatedRoute) {
 
    }
 
   ngOnInit() {
+    this.activated.paramMap.subscribe(params => {
+      
+      this.name = params.get('name').substr(1); 
+    });
     this.href=this.router.url;
     console.log(this.href);
-    if (this.href=="/user/sendinstruction/1"){
+    if (this.href.includes("/user/sendinstruction/")){
       this.rst=true
     }
     

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-charts-andping',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./charts-andping.component.css']
 })
 export class ChartsAndpingComponent implements OnInit {
-
-  constructor() { }
+public name ;
+  constructor(private active : ActivatedRoute) { }
 
   ngOnInit() {
+    this.active.paramMap
+    .subscribe(params => {
+          console.log("params"+params);
+         this.name = params.get('name');
+         this.name = this.name.substr(1);
+    });
   }
 
 }

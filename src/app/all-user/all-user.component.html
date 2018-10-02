@@ -19,28 +19,28 @@
           <div class="inner" >
             <section class="tiles" >
            <div *ngFor="let user of users">           
-                <article   *ngIf="user.image"   class="style1" onclick="parent.location.replace('user/charts/1');">
+                <article   *ngIf="user.image"   class="style1" >
                 <span class="image">
                   
                   <img src="../../assets/images/pic01.jpg "alt="" />
                 
                 
                 </span>
-                <a href="user/charts/1" >
+                <a [href]="['user/charts/', user.name]" >
                   <h2>{{user.name}}</h2>
                   <div class="content">
                     <p>{{user.id}}</p>
                   </div>
                 </a>
               </article>
-              <article   *ngIf="!user.image"   class="style3" onclick="parent.location.replace('user/charts/1');">
+              <article   *ngIf="!user.image"   class="style3" >
                 <span class="image">
                   
                   <img src="../../assets/images/pic01.jpg "alt="" />
                 
                 
                 </span>
-                <a  onclick="parent.location.replace('user/charts/1');">
+                <a [href]="['user/charts/', user.name]">
                   <h2>{{user.name}}</h2>
                   <div class="content">
                     <p>{{user.id}}</p>

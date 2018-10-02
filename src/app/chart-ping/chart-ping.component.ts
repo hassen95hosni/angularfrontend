@@ -5,6 +5,7 @@ import {Chart} from 'chart.js';
 import { MessagingService } from "../services/messaging.service";
 import { Message } from "@stomp/stompjs";
 import { StompState } from "@stomp/ng2-stompjs";
+import {ActivatedRoute} from '@angular/router'
 
 
 const WEBSOCKET_URL = "ws://localhost:1330/socket";
@@ -34,8 +35,9 @@ export class ChartPingComponent implements OnInit {
   averages = [1];
   averagess = [1];
 chart: [''];
+private user : string = "";
 
-  constructor(private apiService : ApiService) { 
+  constructor(private active :ActivatedRoute ,private apiService : ApiService) { 
 
     // Instantiate a messagingService
     this.messagingService = new MessagingService(WEBSOCKET_URL, EXAMPLE_URL);
@@ -176,8 +178,69 @@ this.getAllpingchart(this.chart);
     return this.chart;
   }
   public  getAllpingchart(chart){
+     this.active.paramMap.subscribe(params => {
+       console.log(params.get('name')+"voila");
+       this.user=params.get('name').substr(1);
+       
      
-    this.apiService.getAllping().subscribe((data:  Array<string>) => {
+     })
+     console.log(this.user+"user");
+     this.apiService.getAllpingchart(this.user).subscribe((data  :Array<string>) =>{
+       console.log("new way data" +data);
+     
+       this.ping  =  data;
+       
+               console.log("our data "+this.ping);
+               var i = 0;
+               this.ping.forEach(element => {//console.log(element);
+       
+       
+                 var j = JSON.stringify(element);
+                 //console.log(j);
+                 var a=new Ping("0","0","0");
+                 try{
+                 var x = j.indexOf("average=");
+                 var y = j.indexOf(",",x);
+                 a.average=j.substring(x+8,y);
+       
+                   this.averages.push(Number(j.substring(x+8,y)));
+       
+               }
+               catch(err){
+                 console.log(err);
+               }
+               try {
+                 x = j.indexOf("loss=")
+                 var y = j.indexOf(",",x);
+                 a.loss=j.substring(x+5,y);
+       
+               } catch (error) {
+       
+               }
+                try {
+                 x=j.indexOf("date=")
+                 y=j.indexOf(",",x);
+                 a.date=j.substring(x+5,y);
+                 this.dates.push(j.substring(x+5,y));
+       
+                } catch (error) {
+       
+                }
+       
+                 this.pings[i]=a;
+                 //this.dates.push(pings[i].)
+                 //console.log(this.pings[i]);
+                 i=i+1;
+                
+               });
+       
+             
+             
+            console.log("our dates"+this.dates+this.averages);
+            this.chart=this.cretachart();
+           
+    });
+  /*  this.apiService.getAllping().subscribe((data:  Array<string>) => {
         this.ping  =  data;
 
         //console.log("our data "+this.ping);
@@ -218,55 +281,18 @@ this.getAllpingchart(this.chart);
          }
 
           this.pings[i]=a;
-          //this.dates.push(pings[i].)
-          //console.log(this.pings[i]);
+         
           i=i+1;
-         // var ch = new Chart(this.canvas.nativeElement.getContext('2d'));
-         // console.log(ch);
-          //ch.Line(this.averages);
-         // this.ch.data.datasets.array.forEach((dataset) => {
-             // dataset.data.push(this.averages);
-
-          //  });
-         // console.log("our dates"+this.dates+this.averages);
+        
         });
 
-       // console.log("our dates"+this.dates+this.averages);
-     //adding realtime
-        //  this.chart.data.datasets.array.forEach((dataset) => {
-        //  dataset.data.push(this.averages);
-
-       // });
-      /*  var i = 0;
-       for (i = 0; i < 10; i++) { 
-         if(this.averagess.length>9){
-           while(this.averagess.length>9){
-             this.averagess.pop();
-           }
-           
-        this.averagess.push(this.averages[i]);
-        
-         }
-         if(this.datess.length>9){
-           while(this.datess.length>9){
-             this.datess.pop();
-           }
-           
-        this.datess.push(this.dates[i]);
-        
-         }
-       }
-     console.log("averages"+this.averagess+this.datess); */ 
+      
+     
      console.log("our dates"+this.dates+this.averages);
      this.chart=this.cretachart();
-    });
+    });*/
    
-  //chart.data.dataset.push(this.averages);
- // chart.data.labels.push(this.dates);
- // chart.update();
-   // this.averagess=this.averages.slice(0).slice(10);
-   // this.datess=this.dates.slice(0).slice(10);
-//this.averagess.push(2);
+ 
   
   
 }

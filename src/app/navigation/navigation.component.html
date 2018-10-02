@@ -1,14 +1,15 @@
+<h2>{{name}}</h2>
 <div *ngIf="rst">
 <ul>
     <li >
-        <a href ="user/charts/1" >chart && pings</a> </li>
+        <a [href] ="['user/charts/',name]" >chart && pings</a> </li>
 
 <li >
-    <a href="user/sendinstruction/1" class="active" >send instructions</a> </li>
+    <a [href]="['user/sendinstruction/',name]" class="active" >send instructions</a> </li>
 
 
 <li >
-        <a href="user/change/1" >change Adresse</a> </li>
+        <a [href]="['user/change/',name]" >change Adresse</a> </li>
 
 </ul>
 </div>
@@ -16,14 +17,14 @@
 <div *ngIf="!rst">
         <ul>
             <li >
-                <a href ="user/charts/1" class="active">chart && pings</a> </li>
+                <a [href] ="['user/charts/',name]" class="active">chart && pings</a> </li>
         
         <li >
-            <a href="user/sendinstruction/1" >send instructions</a> </li>
+            <a [href]="['user/sendinstruction/',name]" >send instructions</a> </li>
 
             
 <li >
-        <a href="user/change/1" >change Adresse</a> </li>
+        <a [href]="['user/change/',name]" >change Adresse</a> </li>
             
         
         </ul>

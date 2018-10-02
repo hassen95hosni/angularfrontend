@@ -8,7 +8,7 @@ import { Instruction } from './instruction-send/Instruction';
 })
 export class ApiService {
   us : Observable<User[]>;
-  API_URL  =  'http://localhost:1330';
+  API_URL  =  'http://10.89.72.99:1330';
   constructor(private  httpClient:  HttpClient) { }
   getAllping():Observable<string[]>{
     return  this.httpClient.get<string[]>(`${this.API_URL}/pingAll`);
@@ -19,8 +19,8 @@ createInstruction(instruction:Instruction):Observable<Instruction>{
   var b = JSON.parse(a);
   return this.httpClient.post<Instruction>(`${this.API_URL}/addinstruction/`,b);
 }
-getAllpingchart(sender){
-  return this.httpClient.post(`${this.API_URL}/getpingbysender/`,sender);
+getAllpingchart(sender):Observable<string[]>{
+  return this.httpClient.post<string[]>(`${this.API_URL}/getpingbysender/`,sender);
 }
 getallUsers():Observable<string[]>{
   return this.httpClient.get<string[]>(`${this.API_URL}/userAll`);
@@ -30,6 +30,9 @@ getUserbyName(name):Observable<string>{
 }
 updateuser(name):Observable<string>{
   return this.httpClient.post<string>(`${this.API_URL}/updateUser`,name);
+}
+getpingbyName(name):Observable<string>{
+  return this.httpClient.post<string>(`${this.API_URL}/userbyname`,name);
 }
 }
   
