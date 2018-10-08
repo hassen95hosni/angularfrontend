@@ -8,7 +8,7 @@ import { StompState } from "@stomp/ng2-stompjs";
 import {ActivatedRoute} from '@angular/router'
 
 
-const WEBSOCKET_URL = "ws://localhost:1330/socket";
+const WEBSOCKET_URL = "ws://10.89.72.99:1330/socket";
 const EXAMPLE_URL = "/topic/server-broadcaster";
 
 @Component({
@@ -61,7 +61,8 @@ private user : string = "";
             a.average=j.substring(x+8,y);
   
               this.averages.push(Number(j.substring(x+8,y)));
-              this.averages=this.averages.slice(0,15);
+             // this.averages= this.averages.reverse();
+              this.averages=this.averages.slice(-15);
   
           }
           catch(err){
@@ -81,52 +82,15 @@ private user : string = "";
             a.date=j.substring(x+5,y);
 
             this.dates.push(j.substring(x+5,y));
-            this.dates=this.dates.slice(0,15);
+           
+            this.dates=this.dates.slice(-15);
   
            } catch (error) {
   
            }
   
             
-            //this.dates.push(pings[i].)
-            //console.log(this.pings[i]);
           
-           // var ch = new Chart(this.canvas.nativeElement.getContext('2d'));
-           // console.log(ch);
-            //ch.Line(this.averages);
-           // this.ch.data.datasets.array.forEach((dataset) => {
-               // dataset.data.push(this.averages);
-  
-            //  });
-           // console.log("our dates"+this.dates+this.averages);
-          
-  
-         // console.log("our dates"+this.dates+this.averages);
-       //adding realtime
-          //  this.chart.data.datasets.array.forEach((dataset) => {
-          //  dataset.data.push(this.averages);
-  
-         // });
-        /*  var i = 0;
-         for (i = 0; i < 10; i++) { 
-           if(this.averagess.length>9){
-             while(this.averagess.length>9){
-               this.averagess.pop();
-             }
-             
-          this.averagess.push(this.averages[i]);
-          
-           }
-           if(this.datess.length>9){
-             while(this.datess.length>9){
-               this.datess.pop();
-             }
-             
-          this.datess.push(this.dates[i]);
-          
-           }
-         }
-       console.log("averages"+this.averagess+this.datess); */ 
        console.log("our dates"+this.dates+this.averages);
        this.chart=this.cretachart();
           

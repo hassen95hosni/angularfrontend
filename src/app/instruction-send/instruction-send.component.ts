@@ -66,8 +66,8 @@ console.log("our instruction"+a);
    
  });
 
- // Subscribe to its state (to know its connected or not)
  this.messagingService.state().subscribe((state: StompState) => {
+  // Subscribe to its state (to know its connected or not)
    this.state = StompState[state];
  });
 
@@ -84,7 +84,7 @@ console.log(this.firstNumber);
         add:  "20.0.0.1",
     }
     ;
-    this.result="nothing";
+    this.result="waiting for results";
     var a = new Instruction("","",this.firstNumber+"."+this.secondNumber+"."+this.thirdNumber+"."+this.forthNumber,this.typeValue,this.result);
    console.log(this.typeValue);
     a.type="tracert";
